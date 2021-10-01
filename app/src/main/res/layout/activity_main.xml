@@ -51,10 +51,10 @@
         android:id="@+id/key_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/key_1"
-        app:layout_constraintHorizontal_chainStyle="packed"
         android:layout_margin="8dp"
+        android:text="@string/key_1"
         app:layout_constraintEnd_toStartOf="@id/key_2"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/line_1" />
 
@@ -62,8 +62,8 @@
         android:id="@+id/key_2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/key_2"
         android:layout_margin="8dp"
+        android:text="@string/key_2"
         app:layout_constraintEnd_toStartOf="@id/key_3"
         app:layout_constraintStart_toEndOf="@id/key_1"
         app:layout_constraintTop_toBottomOf="@id/line_1" />
@@ -72,8 +72,8 @@
         android:id="@+id/key_3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/key_3"
         android:layout_margin="8dp"
+        android:text="@string/key_3"
         app:layout_constraintEnd_toStartOf="@id/key_divide"
         app:layout_constraintStart_toEndOf="@id/key_2"
         app:layout_constraintTop_toBottomOf="@id/line_1" />
@@ -82,8 +82,8 @@
         android:id="@+id/key_divide"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/key_divide"
         android:layout_margin="8dp"
+        android:text="@string/key_divide"
         app:layout_constraintEnd_toStartOf="@id/key_clear"
         app:layout_constraintStart_toEndOf="@id/key_3"
         app:layout_constraintTop_toBottomOf="@id/line_1" />
@@ -92,8 +92,8 @@
         android:id="@+id/key_clear"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/key_clear"
         android:layout_margin="8dp"
+        android:text="@string/key_clear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/key_divide"
         app:layout_constraintTop_toBottomOf="@id/line_1" />
@@ -102,8 +102,8 @@
         android:id="@+id/key_4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/key_4"
         android:layout_margin="8dp"
+        android:text="@string/key_4"
         app:layout_constraintEnd_toStartOf="@id/key_5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
@@ -113,8 +113,8 @@
         android:id="@+id/key_5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/key_5"
         android:layout_margin="8dp"
+        android:text="@string/key_5"
         app:layout_constraintEnd_toStartOf="@id/key_6"
         app:layout_constraintStart_toEndOf="@id/key_4"
         app:layout_constraintTop_toBottomOf="@id/key_2" />
@@ -123,8 +123,8 @@
         android:id="@+id/key_6"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/key_6"
         android:layout_margin="8dp"
+        android:text="@string/key_6"
         app:layout_constraintEnd_toStartOf="@id/key_multiply"
         app:layout_constraintStart_toEndOf="@id/key_5"
         app:layout_constraintTop_toBottomOf="@id/key_3" />
@@ -133,8 +133,8 @@
         android:id="@+id/key_multiply"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/key_multiply"
         android:layout_margin="8dp"
+        android:text="@string/key_multiply"
         app:layout_constraintEnd_toStartOf="@id/key_square_root"
         app:layout_constraintStart_toEndOf="@id/key_6"
         app:layout_constraintTop_toBottomOf="@id/key_divide" />
@@ -143,8 +143,8 @@
         android:id="@+id/key_square_root"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/key_square_root"
         android:layout_margin="8dp"
+        android:text="@string/key_square_root"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/key_multiply"
         app:layout_constraintTop_toBottomOf="@id/key_clear" />
@@ -153,10 +153,10 @@
         android:id="@+id/key_7"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/key_7"
         android:layout_margin="8dp"
-        app:layout_constraintHorizontal_chainStyle="packed"
+        android:text="@string/key_7"
         app:layout_constraintEnd_toStartOf="@id/key_8"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/key_4" />
 
@@ -164,8 +164,8 @@
         android:id="@+id/key_8"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/key_8"
         android:layout_margin="8dp"
+        android:text="@string/key_8"
         app:layout_constraintEnd_toStartOf="@id/key_9"
         app:layout_constraintStart_toEndOf="@id/key_7"
         app:layout_constraintTop_toBottomOf="@id/key_5" />
@@ -174,8 +174,8 @@
         android:id="@+id/key_9"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/key_9"
         android:layout_margin="8dp"
+        android:text="@string/key_9"
         app:layout_constraintEnd_toStartOf="@id/key_minus"
         app:layout_constraintStart_toEndOf="@id/key_8"
         app:layout_constraintTop_toBottomOf="@id/key_6" />
@@ -184,8 +184,8 @@
         android:id="@+id/key_minus"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/key_minus"
         android:layout_margin="8dp"
+        android:text="@string/key_minus"
         app:layout_constraintEnd_toStartOf="@id/key_negate"
         app:layout_constraintStart_toEndOf="@id/key_9"
         app:layout_constraintTop_toBottomOf="@id/key_multiply" />
@@ -194,8 +194,8 @@
         android:id="@+id/key_negate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/key_negate"
         android:layout_margin="8dp"
+        android:text="@string/key_negate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/key_minus"
         app:layout_constraintTop_toBottomOf="@id/key_square_root" />
@@ -204,8 +204,8 @@
         android:id="@+id/key_0"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/key_0"
         android:layout_marginTop="8dp"
+        android:text="@string/key_0"
         app:layout_constraintEnd_toEndOf="@id/key_8"
         app:layout_constraintStart_toStartOf="@id/key_7"
         app:layout_constraintTop_toBottomOf="@id/key_7" />
@@ -214,8 +214,8 @@
         android:id="@+id/key_dot"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/key_dot"
         android:layout_marginTop="8dp"
+        android:text="@string/key_dot"
         app:layout_constraintEnd_toEndOf="@id/key_9"
         app:layout_constraintStart_toStartOf="@id/key_9"
         app:layout_constraintTop_toBottomOf="@id/key_9" />
@@ -224,8 +224,8 @@
         android:id="@+id/key_plus"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/key_plus"
         android:layout_marginTop="8dp"
+        android:text="@string/key_plus"
         app:layout_constraintEnd_toEndOf="@id/key_minus"
         app:layout_constraintStart_toStartOf="@id/key_minus"
         app:layout_constraintTop_toBottomOf="@id/key_minus" />
@@ -234,8 +234,8 @@
         android:id="@+id/key_equally"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/key_equally"
         android:layout_marginTop="8dp"
+        android:text="@string/key_equally"
         app:layout_constraintEnd_toEndOf="@id/key_negate"
         app:layout_constraintStart_toStartOf="@id/key_negate"
         app:layout_constraintTop_toBottomOf="@id/key_negate" />
