@@ -14,16 +14,29 @@
     android:padding="15dp"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/image"
+    <TextView
+        android:id="@+id/history"
         android:layout_width="0dp"
-        android:layout_height="100dp"
-        app:layout_constraintBottom_toTopOf="@id/line_1"
+        android:layout_height="30dp"
+        android:text="@string/history"
+        android:textAlignment="textEnd"
+        android:textColor="@color/dark_olive"
+        android:textSize="20sp"
+        tools:text="12345"
+        app:layout_constraintBottom_toTopOf="@id/display"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/line_2"
-        android:src="@drawable/writing_flower"
-        android:scaleType="centerCrop" />
+        app:layout_constraintTop_toBottomOf="@id/line_2" />
+
+    <View
+        android:id="@+id/line_3"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#696969"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/history"
+        app:layout_constraintBottom_toTopOf="@id/display" />
 
     <TextView
         android:id="@+id/display"
@@ -35,10 +48,11 @@
         android:textAlignment="textEnd"
         android:textColor="@color/honey_dew"
         android:textSize="70sp"
+        tools:text="123456"
         app:layout_constraintBottom_toTopOf="@id/line_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/line_2" />
+        app:layout_constraintTop_toBottomOf="@id/history" />
 
     <View
         android:id="@+id/line_1"
