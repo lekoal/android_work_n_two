@@ -17,6 +17,8 @@ public class CalculatorPresenter {
 
     private boolean isDotPressed;
 
+    private boolean isOperationEnded;
+
     private int divider;
 
 
@@ -29,13 +31,17 @@ public class CalculatorPresenter {
 
         if (argTwo == null) {
 
+            if (isOperationEnded) {
+                argOne = 0.0;
+                isOperationEnded = false;
+            }
+
             if (isDotPressed) {
                 argOne = argOne + digit / (double) divider;
                 divider *= BASE;
             } else {
                 argOne = argOne * BASE + digit;
             }
-
             displayResult(argOne);
         } else {
             if (isDotPressed) {
@@ -51,29 +57,41 @@ public class CalculatorPresenter {
     public void onOperationPressed(Operation operation) {
         if (previousOperation != null) {
             double result = calculator.performOperation(argOne, argTwo, previousOperation);
-
             displayResult(result);
-
             argOne = result;
         }
-
         previousOperation = operation;
-
         argTwo = 0.0;
-
         isDotPressed = false;
     }
 
     public void onEquallyPressed(Operation operation) {
         if (previousOperation != null) {
-            displayResult(calculator.performOperation(argOne, argTwo, previousOperation));
+            double result = calculator.performOperation(argOne, argTwo, previousOperation);
+            displayResult(result);
+            argOne = result;
         }
+        argTwo = null;
+        previousOperation = null;
+        isDotPressed = false;
+        isOperationEnded = true;
     }
 
     public void onClearPressed(Operation operation) {
-        argTwo = 0.0;
+        previousOperation = null;
         argOne = 0.0;
+        argTwo = null;
         displayResult(0.0);
+    }
+
+    public void onSquareRootPressed(Operation operation) {
+        if (argTwo != null) {
+            argTwo = Math.sqrt(argTwo);
+            displayResult(argTwo);
+        } else {
+            argOne = Math.sqrt(argOne);
+            displayResult(argOne);
+        }
     }
 
     public void onDotPressed() {
@@ -84,14 +102,11 @@ public class CalculatorPresenter {
     }
 
     private void displayResult(double arg) {
-
         long longValue = (long) arg;
-
         if (longValue == arg) {
             view.showResult(String.valueOf(longValue));
         } else {
             view.showResult(String.valueOf(arg));
         }
     }
-
 }

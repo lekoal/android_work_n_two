@@ -4,10 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.androidworkntwo.R;
 import com.example.androidworkntwo.buffer.CalculatorPresenter;
@@ -68,7 +68,6 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         operators.put(R.id.key_minus, Operation.SUB);
         operators.put(R.id.key_multiply, Operation.MUL);
         operators.put(R.id.key_divide, Operation.DIV);
-        operators.put(R.id.key_square_root, Operation.SQRT);
 
         View.OnClickListener operationClickListener = new View.OnClickListener() {
             @Override
@@ -91,6 +90,13 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
             }
         };
 
+        View.OnClickListener squareRootClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.onSquareRootPressed(Operation.SQRT);
+            }
+        };
+
         findViewById(R.id.key_plus).setOnClickListener(operationClickListener);
         findViewById(R.id.key_minus).setOnClickListener(operationClickListener);
         findViewById(R.id.key_multiply).setOnClickListener(operationClickListener);
@@ -100,13 +106,14 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
 
         findViewById(R.id.key_clear).setOnClickListener(clearClickListener);
 
+        findViewById(R.id.key_square_root).setOnClickListener(squareRootClickListener);
+
         findViewById(R.id.key_dot).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 presenter.onDotPressed();
             }
         });
-
     }
 
     @Override

@@ -15,14 +15,6 @@ public class CalculatorImp implements Calculator {
 
             case DIV:
                 return argOne / argTwo;
-
-            case SQRT:
-                if (argTwo != 0.0) {
-                    return Math.sqrt(argTwo);
-                }
-                else {
-                    return Math.sqrt(argOne);
-                }
         }
         return 0.0;
     }
