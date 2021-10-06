@@ -1,6 +1,6 @@
 package com.example.androidworkntwo.domain;
 
-public class CalculatorImp implements Calculator{
+public class CalculatorImp implements Calculator {
     @Override
     public double performOperation(double argOne, double argTwo, Operation operation) {
         switch (operation) {
@@ -15,6 +15,14 @@ public class CalculatorImp implements Calculator{
 
             case DIV:
                 return argOne / argTwo;
+
+            case SQRT:
+                if (argTwo != 0.0) {
+                    return Math.sqrt(argTwo);
+                }
+                else {
+                    return Math.sqrt(argOne);
+                }
         }
         return 0.0;
     }

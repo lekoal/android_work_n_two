@@ -27,12 +27,12 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_calculator);
+        setContentView(R.layout.activity_main);
 
         presenter = new CalculatorPresenter(this, new CalculatorImp());
 
-        txtResult = findViewById(R.id.txt_result);
-
+        txtResult = findViewById(R.id.display);
+        txtResult.setText("0");
         Map<Integer, Integer> digits = new HashMap<>();
         digits.put(R.id.key_0, 0);
         digits.put(R.id.key_1, 1);
@@ -66,8 +66,9 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         Map<Integer, Operation> operators = new HashMap<>();
         operators.put(R.id.key_plus, Operation.ADD);
         operators.put(R.id.key_minus, Operation.SUB);
-        operators.put(R.id.key_mult, Operation.MUL);
-        operators.put(R.id.key_div, Operation.DIV);
+        operators.put(R.id.key_multiply, Operation.MUL);
+        operators.put(R.id.key_divide, Operation.DIV);
+        operators.put(R.id.key_square_root, Operation.SQRT);
 
         View.OnClickListener operationClickListener = new View.OnClickListener() {
             @Override
@@ -76,10 +77,28 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
             }
         };
 
+        View.OnClickListener equallyClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.onEquallyPressed(Operation.EQU);
+            }
+        };
+
+        View.OnClickListener clearClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.onClearPressed(Operation.CLR);
+            }
+        };
+
         findViewById(R.id.key_plus).setOnClickListener(operationClickListener);
         findViewById(R.id.key_minus).setOnClickListener(operationClickListener);
-        findViewById(R.id.key_mult).setOnClickListener(operationClickListener);
-        findViewById(R.id.key_div).setOnClickListener(operationClickListener);
+        findViewById(R.id.key_multiply).setOnClickListener(operationClickListener);
+        findViewById(R.id.key_divide).setOnClickListener(operationClickListener);
+
+        findViewById(R.id.key_equally).setOnClickListener(equallyClickListener);
+
+        findViewById(R.id.key_clear).setOnClickListener(clearClickListener);
 
         findViewById(R.id.key_dot).setOnClickListener(new View.OnClickListener() {
             @Override

@@ -64,6 +64,18 @@ public class CalculatorPresenter {
         isDotPressed = false;
     }
 
+    public void onEquallyPressed(Operation operation) {
+        if (previousOperation != null) {
+            displayResult(calculator.performOperation(argOne, argTwo, previousOperation));
+        }
+    }
+
+    public void onClearPressed(Operation operation) {
+        argTwo = 0.0;
+        argOne = 0.0;
+        displayResult(0.0);
+    }
+
     public void onDotPressed() {
         if (!isDotPressed) {
             isDotPressed = true;
