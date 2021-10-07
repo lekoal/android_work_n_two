@@ -14,7 +14,8 @@ public enum Operation implements Parcelable {
     CLR,
     NEG,
     EQU,
-    SQRT;
+    SQRT,
+    NULL;
 
     @Override
     public int describeContents() {

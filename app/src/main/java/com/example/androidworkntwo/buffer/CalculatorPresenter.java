@@ -125,11 +125,17 @@ public class CalculatorPresenter {
     }
 
     public Double getArgTwo() {
-        return argTwo;
+        if (argTwo != null) {
+            return argTwo;
+        }
+        return 0.0;
     }
 
     public Operation getPreviousOperation() {
-        return previousOperation;
+        if (previousOperation != null) {
+            return previousOperation;
+        }
+        return Operation.NULL;
     }
 
     public void setArgOne(Double argOne) {
