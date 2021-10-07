@@ -97,6 +97,13 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
             }
         };
 
+        View.OnClickListener negateClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.onNegatePressed(Operation.NEG);
+            }
+        };
+
         findViewById(R.id.key_plus).setOnClickListener(operationClickListener);
         findViewById(R.id.key_minus).setOnClickListener(operationClickListener);
         findViewById(R.id.key_multiply).setOnClickListener(operationClickListener);
@@ -107,6 +114,8 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         findViewById(R.id.key_clear).setOnClickListener(clearClickListener);
 
         findViewById(R.id.key_square_root).setOnClickListener(squareRootClickListener);
+
+        findViewById(R.id.key_negate).setOnClickListener(negateClickListener);
 
         findViewById(R.id.key_dot).setOnClickListener(new View.OnClickListener() {
             @Override

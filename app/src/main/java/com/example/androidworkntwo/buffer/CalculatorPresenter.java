@@ -94,6 +94,16 @@ public class CalculatorPresenter {
         }
     }
 
+    public void onNegatePressed(Operation operation) {
+        if (argTwo != null) {
+            argTwo = -argTwo;
+            displayResult(argTwo);
+        } else {
+            argOne = -argOne;
+            displayResult(argOne);
+        }
+    }
+
     public void onDotPressed() {
         if (!isDotPressed) {
             isDotPressed = true;
