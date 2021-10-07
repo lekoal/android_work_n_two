@@ -1,10 +1,10 @@
 package com.example.androidworkntwo.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -26,8 +26,8 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
+
 
         presenter = new CalculatorPresenter(this, new CalculatorImp());
 
@@ -128,5 +128,28 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
     @Override
     public void showResult(String result) {
         txtResult.setText(result);
+    }
+
+    final String ARGONE = "ARG_ONE";
+    final String ARGTWO = "ARG_TWO";
+    final String OPER = "OPERATION";
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putDouble(ARGONE, presenter.getArgOne());
+        outState.putDouble(ARGTWO, presenter.getArgTwo());
+        outState.putParcelable(OPER, presenter.getPreviousOperation());
+
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        presenter.setArgOne(savedInstanceState.getDouble(ARGONE));
+        presenter.setArgTwo(savedInstanceState.getDouble(ARGTWO));
+        presenter.setPreviousOperation(savedInstanceState.getParcelable(OPER));
+        txtResult.setText(String.valueOf(savedInstanceState.getDouble(ARGONE)));
     }
 }

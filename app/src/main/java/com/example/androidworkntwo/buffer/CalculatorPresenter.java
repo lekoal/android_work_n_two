@@ -119,4 +119,28 @@ public class CalculatorPresenter {
             view.showResult(String.valueOf(arg));
         }
     }
+
+    public Double getArgOne() {
+        return argOne;
+    }
+
+    public Double getArgTwo() {
+        return argTwo;
+    }
+
+    public Operation getPreviousOperation() {
+        return previousOperation;
+    }
+
+    public void setArgOne(Double argOne) {
+        this.argOne = argOne;
+    }
+
+    public void setArgTwo(Double argTwo) {
+        this.argTwo = argTwo;
+    }
+
+    public void setPreviousOperation(Operation previousOperation) {
+        this.previousOperation = previousOperation;
+    }
 }
