@@ -150,12 +150,21 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         presenter.setArgOne(savedInstanceState.getDouble(ARGONE));
         if (savedInstanceState.getDouble(ARGTWO) != 0.0) {
             presenter.setArgTwo(savedInstanceState.getDouble(ARGTWO));
-            txtResult.setText(String.valueOf(savedInstanceState.getDouble(ARGTWO)));
+            displayResult(savedInstanceState.getDouble(ARGTWO));
         } else {
-            txtResult.setText(String.valueOf(savedInstanceState.getDouble(ARGONE)));
+            displayResult(savedInstanceState.getDouble(ARGONE));
         }
         if (!(savedInstanceState.getParcelable(OPER).equals(Operation.NULL))) {
             presenter.setPreviousOperation(savedInstanceState.getParcelable(OPER));
+        }
+    }
+
+    private void displayResult(double arg) {
+        long longValue = (long) arg;
+        if (longValue == arg) {
+            txtResult.setText(String.valueOf(longValue));
+        } else {
+            txtResult.setText(String.valueOf(arg));
         }
     }
 }
