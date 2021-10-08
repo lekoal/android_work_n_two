@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="PortraitDisplayStyle">
+        <item name="android:layout_height">@dimen/displayHeight</item>
+        <item name="android:layout_width">@dimen/width</item>
+        <item name="android:shadowColor">@color/dark_olive</item>
+        <item name="android:shadowRadius">@dimen/displayTextShadowRadius</item>
+        <item name="android:textColor">@color/honey_dew</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textSize">@dimen/textSize</item>
+    </style>
+
+    <style name="LandscapeDisplayStyle">
+        <item name="android:layout_height">@dimen/displayLandscapeHeight</item>
+        <item name="android:layout_width">@dimen/width</item>
+        <item name="android:shadowColor">@color/dark_olive</item>
+        <item name="android:shadowRadius">@dimen/displayTextShadowRadius</item>
+        <item name="android:textColor">@color/honey_dew</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textSize">@dimen/textSize</item>
+    </style>
+
+    <style name="LineStyle">
+        <item name="android:layout_width">@dimen/width</item>
+        <item name="android:layout_height">@dimen/lineHeight</item>
+        <item name="android:background">#696969</item>
+    </style>
+
+    <style name="ButtonStyle">
+        <item name="android:layout_width">@dimen/width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margin</item>
+    </style>
+
+    <style name="PortraitLowButtonStyle">
+        <item name="android:layout_width">@dimen/width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/margin</item>
+    </style>
+
+</resources>
