@@ -23,6 +23,10 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
 
     private CalculatorPresenter presenter;
 
+    private static final String ARGONE = "ARG_ONE";
+    private static final String ARGTWO = "ARG_TWO";
+    private static final String OPER = "OPERATION";
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,15 +134,11 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         txtResult.setText(result);
     }
 
-    final String ARGONE = "ARG_ONE";
-    final String ARGTWO = "ARG_TWO";
-    final String OPER = "OPERATION";
-
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         outState.putDouble(ARGONE, presenter.getArgOne());
         outState.putDouble(ARGTWO, presenter.getArgTwo());
-        outState.putParcelable(OPER, presenter.getPreviousOperation());
+        outState.putSerializable(OPER, presenter.getPreviousOperation());
 
         super.onSaveInstanceState(outState);
     }
@@ -154,8 +154,8 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         } else {
             displayResult(savedInstanceState.getDouble(ARGONE));
         }
-        if (!(savedInstanceState.getParcelable(OPER).equals(Operation.NULL))) {
-            presenter.setPreviousOperation(savedInstanceState.getParcelable(OPER));
+        if (!(savedInstanceState.getSerializable(OPER).equals(Operation.NULL))) {
+            presenter.setPreviousOperation((Operation) savedInstanceState.getSerializable(OPER));
         }
     }
 
