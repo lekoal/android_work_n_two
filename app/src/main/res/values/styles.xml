@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <style name="PortraitDisplayStyle">
         <item name="android:layout_height">@dimen/displayHeight</item>
         <item name="android:layout_width">@dimen/width</item>
-        <item name="android:shadowColor">@color/dark_olive</item>
+        <item name="android:shadowColor">@color/colorPrimary</item>
         <item name="android:shadowRadius">@dimen/displayTextShadowRadius</item>
-        <item name="android:textColor">@color/honey_dew</item>
+        <item name="android:textColor">@color/displayTextColor</item>
         <item name="android:textAlignment">textEnd</item>
         <item name="android:textSize">@dimen/textSize</item>
     </style>
@@ -14,9 +13,9 @@
     <style name="LandscapeDisplayStyle">
         <item name="android:layout_height">@dimen/displayLandscapeHeight</item>
         <item name="android:layout_width">@dimen/width</item>
-        <item name="android:shadowColor">@color/dark_olive</item>
+        <item name="android:shadowColor">@color/colorPrimary</item>
         <item name="android:shadowRadius">@dimen/displayTextShadowRadius</item>
-        <item name="android:textColor">@color/honey_dew</item>
+        <item name="android:textColor">@color/displayTextColor</item>
         <item name="android:textAlignment">textEnd</item>
         <item name="android:textSize">@dimen/textSize</item>
     </style>
