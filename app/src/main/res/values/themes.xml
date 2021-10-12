@@ -19,4 +19,12 @@
         <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
         <item name="colorOnPrimary">@color/colorOnPrimary</item>
     </style>
+
+    <style name="MyBlackTheme" parent="Theme.AndroidWorkNTwo">
+        <item name="colorPrimary">@color/colorBlackThemePrimary</item>
+        <item name="colorPrimaryVariant">@color/colorBlackThemePrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorBlackThemeOnPrimary</item>
+        <item name="android:background">@color/colorBlackThemeBackground</item>
+
+    </style>
 </resources>

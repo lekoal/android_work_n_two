@@ -12,7 +12,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/allPadding"
-    android:theme="@style/MyDarkLiteTheme"
+    android:theme="@style/MyBlackTheme"
     tools:context=".ui.CalculatorActivity"
     android:orientation="vertical">
 

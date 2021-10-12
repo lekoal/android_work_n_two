@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="PortraitDisplayStyle">
         <item name="android:layout_height">@dimen/displayHeight</item>
         <item name="android:layout_width">@dimen/width</item>
@@ -30,6 +31,8 @@
         <item name="android:layout_width">@dimen/width</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">@dimen/margin</item>
+        <item name="strokeColor">@color/ivory</item>
+        <item name="strokeWidth">@dimen/strokeWidth</item>
     </style>
 
     <style name="PortraitLowButtonStyle">

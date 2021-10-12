@@ -17,4 +17,8 @@
     <color name="colorPrimary">#FF556B2F</color>
     <color name="darkSea">#FF8FBC8F</color>
     <color name="displayTextColor">#FFF0FFF0</color>
+    <color name="colorBlackThemePrimary">#043721</color>
+    <color name="colorBlackThemePrimaryVariant">#FFC0C0C0</color>
+    <color name="colorBlackThemeOnPrimary">#FFC0C0C0</color>
+    <color name="colorBlackThemeBackground">#252424</color>
 </resources>

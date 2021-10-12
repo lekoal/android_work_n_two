@@ -9,4 +9,5 @@
     <dimen name="displayLandscapeHeight">90dp</dimen>
     <dimen name="lineHeight">1dp</dimen>
     <dimen name="displayTextShadowRadius">12</dimen>
+    <dimen name="strokeWidth">4dp</dimen>
 </resources>
