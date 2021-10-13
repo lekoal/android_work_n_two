@@ -30,13 +30,15 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
     private static final String ARGONE = "ARG_ONE";
     private static final String ARGTWO = "ARG_TWO";
     private static final String OPER = "OPERATION";
-    private static final String ARG_THEME = "ARG_THEME";
+
+    Button themeSelection;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        themeSelection = findViewById(R.id.key_theme_selection);
 
         presenter = new CalculatorPresenter(this, new CalculatorImp());
 
@@ -133,19 +135,14 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
             }
         });
 
-        MaterialButton themeSelection = findViewById(R.id.key_theme_selection);
+        themeSelection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CalculatorActivity.this, ThemeSelectionActivity.class);
+                startActivity(intent);
 
-        if (themeSelection != null) {
-            themeSelection.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(CalculatorActivity.this, ThemeSelectionActivity.class);
-                    startActivity(intent);
-
-                }
-            });
-        }
-
+            }
+        });
     }
 
     @Override
