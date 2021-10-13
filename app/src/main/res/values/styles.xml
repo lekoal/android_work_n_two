@@ -6,7 +6,7 @@
         <item name="android:layout_width">@dimen/width</item>
         <item name="android:shadowColor">@color/colorPrimary</item>
         <item name="android:shadowRadius">@dimen/displayTextShadowRadius</item>
-        <item name="android:textColor">@color/displayTextColor</item>
+        <item name="android:textColor">@color/colorPrimaryVariant</item>
         <item name="android:textAlignment">textEnd</item>
         <item name="android:textSize">@dimen/textSize</item>
     </style>
@@ -16,9 +16,9 @@
         <item name="android:layout_width">@dimen/width</item>
         <item name="android:shadowColor">@color/colorPrimary</item>
         <item name="android:shadowRadius">@dimen/displayTextShadowRadius</item>
-        <item name="android:textColor">@color/displayTextColor</item>
+        <item name="android:textColor">@color/colorPrimaryVariant</item>
         <item name="android:textAlignment">textEnd</item>
-        <item name="android:textSize">@dimen/textSize</item>
+        <item name="android:textSize">@dimen/textLandscapeSize</item>
     </style>
 
     <style name="LineStyle">
@@ -27,11 +27,26 @@
         <item name="android:background">#696969</item>
     </style>
 
+    <style name="TopLineStyle">
+        <item name="android:layout_width">@dimen/width</item>
+        <item name="android:layout_height">@dimen/lineHeight</item>
+        <item name="android:background">#696969</item>
+        <item name="android:layout_marginTop">@dimen/lineMarginTop</item>
+    </style>
+
     <style name="ButtonStyle">
         <item name="android:layout_width">@dimen/width</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">@dimen/margin</item>
-        <item name="strokeColor">@color/ivory</item>
+        <item name="strokeColor">#6A6A6A</item>
+        <item name="strokeWidth">@dimen/strokeWidth</item>
+    </style>
+
+    <style name="LandscapeButtonStyle">
+        <item name="android:layout_width">@dimen/width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/marginLandscape</item>
+        <item name="strokeColor">#6A6A6A</item>
         <item name="strokeWidth">@dimen/strokeWidth</item>
     </style>
 
@@ -39,6 +54,8 @@
         <item name="android:layout_width">@dimen/width</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">@dimen/margin</item>
+        <item name="strokeColor">#6A6A6A</item>
+        <item name="strokeWidth">@dimen/strokeWidth</item>
     </style>
 
 </resources>

@@ -25,6 +25,5 @@
         <item name="colorPrimaryVariant">@color/colorBlackThemePrimaryVariant</item>
         <item name="colorOnPrimary">@color/colorBlackThemeOnPrimary</item>
         <item name="android:background">@color/colorBlackThemeBackground</item>
-
     </style>
 </resources>

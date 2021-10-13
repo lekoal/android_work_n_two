@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!--
-    Для создания калькулятора решено использовать макет ConstraintLayout.
-    Данный макет позволяет разместить большое количество элементов с привязкой друг к другу, а также к родительскому контейнеру.
-    Это означает, что с данным макетом возможно точное позиционирование всех элементов, и спроектированное приложение будет одинаково хорошо отображаться на устройствах с различными размерами экранов.
--->
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/allPadding"
-    android:theme="@style/MyDarkLiteTheme"
+    android:theme="@style/MyBlackTheme"
     tools:context=".ui.CalculatorActivity"
     android:orientation="horizontal">
 
@@ -34,164 +28,183 @@
 
     <View
         android:id="@+id/line_2"
-        style="@style/LineStyle"
+        style="@style/TopLineStyle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/display" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_1"
-        style="@style/ButtonStyle"
+        style="@style/LandscapeButtonStyle"
         android:text="@string/key_1"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintEnd_toStartOf="@id/key_2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/line_1" />
+        app:layout_constraintTop_toBottomOf="@id/line_1"
+        app:layout_constraintBottom_toTopOf="@id/key_5" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_2"
-        style="@style/ButtonStyle"
+        style="@style/LandscapeButtonStyle"
         android:text="@string/key_2"
         app:layout_constraintEnd_toStartOf="@id/key_3"
         app:layout_constraintStart_toEndOf="@id/key_1"
-        app:layout_constraintTop_toBottomOf="@id/line_1" />
+        app:layout_constraintTop_toBottomOf="@id/line_1"
+        app:layout_constraintBottom_toTopOf="@id/key_6" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_3"
-        style="@style/ButtonStyle"
+        style="@style/LandscapeButtonStyle"
         android:text="@string/key_3"
         app:layout_constraintEnd_toStartOf="@id/key_4"
         app:layout_constraintStart_toEndOf="@id/key_2"
-        app:layout_constraintTop_toBottomOf="@id/line_1" />
+        app:layout_constraintTop_toBottomOf="@id/line_1"
+        app:layout_constraintBottom_toTopOf="@id/key_7" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_4"
-        style="@style/ButtonStyle"
+        style="@style/LandscapeButtonStyle"
         android:text="@string/key_4"
         app:layout_constraintEnd_toStartOf="@id/key_divide"
         app:layout_constraintStart_toEndOf="@id/key_3"
-        app:layout_constraintTop_toBottomOf="@id/line_1" />
+        app:layout_constraintTop_toBottomOf="@id/line_1"
+        app:layout_constraintBottom_toTopOf="@id/key_8" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_divide"
-        style="@style/ButtonStyle"
+        style="@style/LandscapeButtonStyle"
         android:text="@string/key_divide"
         app:layout_constraintEnd_toStartOf="@id/key_clear"
         app:layout_constraintStart_toEndOf="@id/key_4"
-        app:layout_constraintTop_toBottomOf="@id/line_1" />
+        app:layout_constraintTop_toBottomOf="@id/line_1"
+        app:layout_constraintBottom_toTopOf="@id/key_multiply" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_clear"
-        style="@style/ButtonStyle"
+        style="@style/LandscapeButtonStyle"
         android:text="@string/key_clear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/key_divide"
-        app:layout_constraintTop_toBottomOf="@id/line_1" />
+        app:layout_constraintTop_toBottomOf="@id/line_1"
+        app:layout_constraintBottom_toTopOf="@id/key_square_root" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_5"
-        style="@style/ButtonStyle"
+        style="@style/LandscapeButtonStyle"
         android:text="@string/key_5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintEnd_toStartOf="@id/key_6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/key_1" />
+        app:layout_constraintTop_toBottomOf="@id/key_1"
+        app:layout_constraintBottom_toTopOf="@id/key_9" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_6"
-        style="@style/ButtonStyle"
+        style="@style/LandscapeButtonStyle"
         android:text="@string/key_6"
         app:layout_constraintEnd_toStartOf="@id/key_7"
         app:layout_constraintStart_toEndOf="@id/key_5"
-        app:layout_constraintTop_toBottomOf="@id/key_2" />
+        app:layout_constraintTop_toBottomOf="@id/key_2"
+        app:layout_constraintBottom_toTopOf="@id/key_0" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_7"
-        style="@style/ButtonStyle"
+        style="@style/LandscapeButtonStyle"
         android:text="@string/key_7"
         app:layout_constraintEnd_toStartOf="@id/key_8"
         app:layout_constraintStart_toEndOf="@id/key_6"
-        app:layout_constraintTop_toBottomOf="@id/key_3" />
+        app:layout_constraintTop_toBottomOf="@id/key_3"
+        app:layout_constraintBottom_toTopOf="@id/key_minus" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_8"
-        style="@style/ButtonStyle"
+        style="@style/LandscapeButtonStyle"
         android:text="@string/key_8"
         app:layout_constraintEnd_toStartOf="@id/key_multiply"
         app:layout_constraintStart_toEndOf="@id/key_7"
-        app:layout_constraintTop_toBottomOf="@id/key_4" />
+        app:layout_constraintTop_toBottomOf="@id/key_4"
+        app:layout_constraintBottom_toTopOf="@id/key_plus" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_multiply"
-        style="@style/ButtonStyle"
+        style="@style/LandscapeButtonStyle"
         android:text="@string/key_multiply"
         app:layout_constraintEnd_toStartOf="@id/key_square_root"
         app:layout_constraintStart_toEndOf="@id/key_8"
-        app:layout_constraintTop_toBottomOf="@id/key_divide" />
+        app:layout_constraintTop_toBottomOf="@id/key_divide"
+        app:layout_constraintBottom_toTopOf="@id/key_negate" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_square_root"
-        style="@style/ButtonStyle"
+        style="@style/LandscapeButtonStyle"
         android:text="@string/key_square_root"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/key_multiply"
-        app:layout_constraintTop_toBottomOf="@id/key_clear" />
+        app:layout_constraintTop_toBottomOf="@id/key_clear"
+        app:layout_constraintBottom_toTopOf="@id/key_dot" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_9"
-        style="@style/ButtonStyle"
+        style="@style/LandscapeButtonStyle"
         android:text="@string/key_9"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintEnd_toStartOf="@id/key_0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/key_5" />
+        app:layout_constraintTop_toBottomOf="@id/key_5"
+        app:layout_constraintBottom_toTopOf="@id/key_equally" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_0"
-        style="@style/ButtonStyle"
+        style="@style/LandscapeButtonStyle"
         android:text="@string/key_0"
         app:layout_constraintEnd_toStartOf="@id/key_minus"
         app:layout_constraintStart_toEndOf="@id/key_9"
-        app:layout_constraintTop_toBottomOf="@id/key_6" />
+        app:layout_constraintTop_toBottomOf="@id/key_6"
+        app:layout_constraintBottom_toTopOf="@id/key_equally" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_minus"
-        style="@style/ButtonStyle"
+        style="@style/LandscapeButtonStyle"
         android:text="@string/key_minus"
         app:layout_constraintEnd_toStartOf="@id/key_plus"
         app:layout_constraintStart_toEndOf="@id/key_0"
-        app:layout_constraintTop_toBottomOf="@id/key_7" />
+        app:layout_constraintTop_toBottomOf="@id/key_7"
+        app:layout_constraintBottom_toTopOf="@id/key_equally" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_plus"
-        style="@style/ButtonStyle"
+        style="@style/LandscapeButtonStyle"
         android:text="@string/key_plus"
         app:layout_constraintEnd_toStartOf="@id/key_negate"
         app:layout_constraintStart_toEndOf="@id/key_minus"
-        app:layout_constraintTop_toBottomOf="@id/key_8" />
+        app:layout_constraintTop_toBottomOf="@id/key_8"
+        app:layout_constraintBottom_toTopOf="@id/key_equally" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_negate"
-        style="@style/ButtonStyle"
+        style="@style/LandscapeButtonStyle"
         android:text="@string/key_negate"
         app:layout_constraintEnd_toStartOf="@id/key_dot"
         app:layout_constraintStart_toEndOf="@id/key_plus"
-        app:layout_constraintTop_toBottomOf="@id/key_multiply" />
+        app:layout_constraintTop_toBottomOf="@id/key_multiply"
+        app:layout_constraintBottom_toTopOf="@id/key_equally" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_dot"
-        style="@style/ButtonStyle"
+        style="@style/LandscapeButtonStyle"
         android:text="@string/key_dot"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/key_negate"
-        app:layout_constraintTop_toBottomOf="@id/key_square_root" />
+        app:layout_constraintTop_toBottomOf="@id/key_square_root"
+        app:layout_constraintBottom_toTopOf="@id/key_equally" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/key_equally"
-        style="@style/ButtonStyle"
+        style="@style/LandscapeButtonStyle"
         android:text="@string/key_equally"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/key_negate" />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
