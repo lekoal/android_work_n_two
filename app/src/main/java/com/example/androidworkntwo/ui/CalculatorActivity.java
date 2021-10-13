@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,7 @@ import com.example.androidworkntwo.R;
 import com.example.androidworkntwo.buffer.CalculatorPresenter;
 import com.example.androidworkntwo.domain.CalculatorImp;
 import com.example.androidworkntwo.domain.Operation;
+import com.google.android.material.button.MaterialButton;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,6 +30,7 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
     private static final String ARGONE = "ARG_ONE";
     private static final String ARGTWO = "ARG_TWO";
     private static final String OPER = "OPERATION";
+    private static final String ARG_THEME = "ARG_THEME";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -130,7 +133,19 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
             }
         });
 
-        initView();
+        MaterialButton themeSelection = findViewById(R.id.key_theme_selection);
+
+        if (themeSelection != null) {
+            themeSelection.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(CalculatorActivity.this, ThemeSelectionActivity.class);
+                    startActivity(intent);
+
+                }
+            });
+        }
+
     }
 
     @Override
@@ -170,16 +185,5 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         } else {
             txtResult.setText(String.valueOf(arg));
         }
-    }
-
-    private void initView() {
-        Button themeSelection = findViewById(R.id.key_theme_selection);
-        themeSelection.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent themeSelect = new Intent(CalculatorActivity.this, ThemeSelectionActivity.class);
-                startActivity(themeSelect);
-            }
-        });
     }
 }
