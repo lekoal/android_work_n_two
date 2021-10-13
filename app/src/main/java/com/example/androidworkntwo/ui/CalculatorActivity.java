@@ -3,8 +3,10 @@ package com.example.androidworkntwo.ui;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -127,6 +129,8 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
                 presenter.onDotPressed();
             }
         });
+
+        initView();
     }
 
     @Override
@@ -166,5 +170,16 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         } else {
             txtResult.setText(String.valueOf(arg));
         }
+    }
+
+    private void initView() {
+        Button themeSelection = findViewById(R.id.key_theme_selection);
+        themeSelection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent themeSelect = new Intent(CalculatorActivity.this, ThemeSelectionActivity.class);
+                startActivity(themeSelect);
+            }
+        });
     }
 }

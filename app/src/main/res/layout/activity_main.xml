@@ -187,4 +187,14 @@
         app:layout_constraintStart_toStartOf="@id/key_negate"
         app:layout_constraintTop_toBottomOf="@id/key_negate" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/theme_selection"
+        style="@style/ButtonStyle"
+        android:layout_width="0dp"
+        android:text="@string/key_theme_selection"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

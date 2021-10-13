@@ -199,11 +199,19 @@
         app:layout_constraintBottom_toTopOf="@id/key_equally" />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/key_theme_selection"
+        style="@style/LandscapeButtonStyle"
+        android:text="@string/key_theme_selection"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/key_equally"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/key_equally"
         style="@style/LandscapeButtonStyle"
         android:text="@string/key_equally"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/key_theme_selection"
         app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
