@@ -63,6 +63,17 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
             }
         });
 
+        Intent intent = getIntent();
+        int themeId = intent.getIntExtra("THEME_ID", -1);
+
+        if (themeId == 0) {
+            this.setTheme(R.style.MyDarkLightTheme);
+            recreate();
+        } else if (themeId == 1) {
+            this.setTheme(R.style.MyBlackTheme);
+            recreate();
+        }
+
         presenter = new CalculatorPresenter(this, new CalculatorImp());
 
         txtResult = findViewById(R.id.display);
