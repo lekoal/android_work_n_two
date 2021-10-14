@@ -63,4 +63,25 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+    <style name="LinearOuterThemeSelectionStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/lightSteel</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="LinearInnerThemeSelectionPortraitStyle">
+        <item name="android:layout_width">180dp</item>
+        <item name="android:layout_height">260dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:padding">20dp</item>
+    </style>
+
+    <style name="LinearInnerThemeSelectionLandscapeStyle">
+        <item name="android:layout_width">250dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:padding">20dp</item>
+    </style>
 </resources>

@@ -40,6 +40,15 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
 
         themeSelection = findViewById(R.id.key_theme_selection);
 
+        themeSelection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CalculatorActivity.this, ThemeSelectionActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
         presenter = new CalculatorPresenter(this, new CalculatorImp());
 
         txtResult = findViewById(R.id.display);
@@ -132,15 +141,6 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
             @Override
             public void onClick(View v) {
                 presenter.onDotPressed();
-            }
-        });
-
-        themeSelection.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(CalculatorActivity.this, ThemeSelectionActivity.class);
-                startActivity(intent);
-
             }
         });
     }

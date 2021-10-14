@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/lightSteel"
-    android:gravity="center_horizontal"
-    android:orientation="horizontal"
+    style="@style/LinearOuterThemeSelectionStyle"
     tools:context=".ui.ThemeSelectionActivity">
 
     <LinearLayout
         android:id="@+id/pack_1"
-        android:layout_width="180dp"
-        android:layout_height="250dp"
-        android:layout_margin="8dp"
-        android:padding="20dp">
+        style="@style/LinearInnerThemeSelectionPortraitStyle">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/image_dark_light_theme"
@@ -25,10 +18,7 @@
 
     <LinearLayout
         android:id="@+id/pack_2"
-        android:layout_width="180dp"
-        android:layout_height="250dp"
-        android:layout_margin="8dp"
-        android:padding="20dp">
+        style="@style/LinearInnerThemeSelectionPortraitStyle">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/image_black_theme"
