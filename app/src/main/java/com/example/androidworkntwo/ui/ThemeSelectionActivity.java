@@ -24,8 +24,9 @@ public class ThemeSelectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ThemeSelectionActivity.this, CalculatorActivity.class);
-                intent.putExtra("THEME_ID", 0);
+                intent.putExtra("THEME", 0);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -33,8 +34,9 @@ public class ThemeSelectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ThemeSelectionActivity.this, CalculatorActivity.class);
-                intent.putExtra("THEME_ID", 1);
+                intent.putExtra("THEME", 1);
                 startActivity(intent);
+                finish();
             }
         });
     }

@@ -5,13 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
-import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -22,7 +18,6 @@ import com.example.androidworkntwo.R;
 import com.example.androidworkntwo.buffer.CalculatorPresenter;
 import com.example.androidworkntwo.domain.CalculatorImp;
 import com.example.androidworkntwo.domain.Operation;
-import com.google.android.material.button.MaterialButton;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,18 +34,11 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
 
     Button themeSelection;
 
-    private int themeId;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        changeTheme();
         setContentView(R.layout.activity_main);
-
-        try {
-            themeId = getPackageManager().getActivityInfo(getComponentName(), 0).theme;
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
 
         themeSelection = findViewById(R.id.key_theme_selection);
 
@@ -58,21 +46,9 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CalculatorActivity.this, ThemeSelectionActivity.class);
-                System.out.println("THEME ID: " + themeId);
                 startActivity(intent);
             }
         });
-
-        Intent intent = getIntent();
-        int themeId = intent.getIntExtra("THEME_ID", -1);
-
-        if (themeId == 0) {
-            this.setTheme(R.style.MyDarkLightTheme);
-            recreate();
-        } else if (themeId == 1) {
-            this.setTheme(R.style.MyBlackTheme);
-            recreate();
-        }
 
         presenter = new CalculatorPresenter(this, new CalculatorImp());
 
@@ -206,6 +182,18 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
             txtResult.setText(String.valueOf(longValue));
         } else {
             txtResult.setText(String.valueOf(arg));
+        }
+    }
+
+    private void changeTheme() {
+        Intent intent = getIntent();
+        int themeId = intent.getIntExtra("THEME", -1);
+        if (themeId == 0) {
+            setTheme(R.style.MyDarkLightTheme);
+        } else if (themeId == 1) {
+            setTheme(R.style.MyBlackTheme);
+        } else {
+            setTheme(R.style.MyDarkLightTheme);
         }
     }
 }
