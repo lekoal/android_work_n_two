@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
@@ -36,9 +37,10 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        changeTheme();
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+
 
         themeSelection = findViewById(R.id.key_theme_selection);
 
@@ -49,6 +51,7 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
                 startActivity(intent);
             }
         });
+
 
         presenter = new CalculatorPresenter(this, new CalculatorImp());
 
@@ -188,16 +191,23 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
     private void changeTheme() {
         Intent intent = getIntent();
         int themeId = intent.getIntExtra("THEME", -1);
-        if (themeId == 1) {
-            setTheme(R.style.MyDarkLightTheme);
-            themeId = 0;
-            intent = null;
-        } else if (themeId == 2) {
-            setTheme(R.style.MyBlackTheme);
-            themeId = 0;
-            intent = null;
-        } else {
-            return;
+        switch (themeId) {
+            case 1:
+                setTheme(R.style.MyDarkLightTheme);
+                themeId = 0;
+                intent = null;
+                recreate();
+                break;
+
+            case 2:
+                setTheme(R.style.MyBlackTheme);
+                themeId = 0;
+                intent = null;
+                recreate();
+                break;
+
+            default:
+                break;
         }
     }
 }

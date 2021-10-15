@@ -7,6 +7,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.example.androidworkntwo.R;
 
@@ -23,9 +24,7 @@ public class ThemeSelectionActivity extends AppCompatActivity {
         imageThemeLeft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ThemeSelectionActivity.this, CalculatorActivity.class);
-                intent.putExtra("THEME", 1);
-                startActivity(intent);
+
                 finish();
             }
         });
@@ -33,9 +32,7 @@ public class ThemeSelectionActivity extends AppCompatActivity {
         imageThemeRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ThemeSelectionActivity.this, CalculatorActivity.class);
-                intent.putExtra("THEME", 2);
-                startActivity(intent);
+
                 finish();
             }
         });
