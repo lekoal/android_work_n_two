@@ -36,8 +36,8 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         changeTheme();
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         themeSelection = findViewById(R.id.key_theme_selection);
@@ -188,12 +188,16 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
     private void changeTheme() {
         Intent intent = getIntent();
         int themeId = intent.getIntExtra("THEME", -1);
-        if (themeId == 0) {
+        if (themeId == 1) {
             setTheme(R.style.MyDarkLightTheme);
-        } else if (themeId == 1) {
+            themeId = 0;
+            intent = null;
+        } else if (themeId == 2) {
             setTheme(R.style.MyBlackTheme);
+            themeId = 0;
+            intent = null;
         } else {
-            setTheme(R.style.MyDarkLightTheme);
+            return;
         }
     }
 }
