@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="margin">8dp</dimen>
-    <dimen name="marginLandscape">6dp</dimen>
-    <dimen name="textSize">70sp</dimen>
+    <dimen name="marginLandscape">4dp</dimen>
+    <dimen name="textSize">60sp</dimen>
+    <dimen name="textLandscapeSize">60sp</dimen>
     <dimen name="width">0dp</dimen>
-    <dimen name="allPadding">15dp</dimen>
+    <dimen name="allPadding">10dp</dimen>
     <dimen name="displayHeight">100dp</dimen>
-    <dimen name="displayLandscapeHeight">90dp</dimen>
+    <dimen name="displayLandscapeHeight">100dp</dimen>
     <dimen name="lineHeight">1dp</dimen>
-    <dimen name="displayTextShadowRadius">12</dimen>
+    <dimen name="displayTextShadowRadius">15</dimen>
+    <dimen name="strokeWidth">1dp</dimen>
+    <dimen name="lineMarginTop">10dp</dimen>
 </resources>

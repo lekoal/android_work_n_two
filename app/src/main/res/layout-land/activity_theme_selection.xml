@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/LinearOuterThemeSelectionStyle"
+    tools:context=".ui.ThemeSelectionActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_dark_light_theme"
+        style="@style/ImageViewThemeSelectionLandscape"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_theme1" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_black_theme"
+        style="@style/ImageViewThemeSelectionLandscape"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_theme2" />
+
+</LinearLayout>
+

@@ -2,6 +2,6 @@
 <resources>
     <color name="colorPrimary">#F4BA6C</color>
     <color name="colorOnPrimary">#912300</color>
-    <color name="colorPrimaryVariant">#EDD6D6</color>
-    <color name="displayTextColor">#FFB39C</color>
+    <color name="colorPrimaryVariant">#BFBFBF</color>
+    <color name="displayTextColor">#B6B6B6</color>
 </resources>

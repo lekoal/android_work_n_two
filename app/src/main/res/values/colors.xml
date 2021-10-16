@@ -4,7 +4,7 @@
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="lightGrey">#FFD3D3D3</color>
-    <color name="colorPrimaryVariant">#FFC0C0C0</color>
+    <color name="colorPrimaryVariant">#EBE9E9</color>
     <color name="antiqueWhite">#FFFAEBD7</color>
     <color name="ivory">#FFFFFFF0</color>
     <color name="teal_200">#FF03DAC5</color>
@@ -16,5 +16,9 @@
     <color name="olive">#FF808000</color>
     <color name="colorPrimary">#FF556B2F</color>
     <color name="darkSea">#FF8FBC8F</color>
-    <color name="displayTextColor">#FFF0FFF0</color>
+    <color name="displayTextColor">#FFFFFF</color>
+    <color name="colorBlackThemePrimary">#191A1A</color>
+    <color name="colorBlackThemePrimaryVariant">#888888</color>
+    <color name="colorBlackThemeOnPrimary">#FFFFFF</color>
+    <color name="colorBlackThemeBackground">#252424</color>
 </resources>
