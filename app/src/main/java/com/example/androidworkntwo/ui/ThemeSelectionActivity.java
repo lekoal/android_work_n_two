@@ -3,15 +3,16 @@ package com.example.androidworkntwo.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
+
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import com.example.androidworkntwo.R;
 
 public class ThemeSelectionActivity extends AppCompatActivity {
+
+    private final String ACCESS_MESSAGE = "ACCESS_MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,17 +25,22 @@ public class ThemeSelectionActivity extends AppCompatActivity {
         imageThemeLeft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                finish();
+                sendMessage(1);
             }
         });
 
         imageThemeRight.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
-                finish();
+            public void onClick(View v) {
+                sendMessage(2);
             }
         });
+    }
+
+    private void sendMessage(int message) {
+        Intent data = new Intent();
+        data.putExtra(ACCESS_MESSAGE, message);
+        setResult(RESULT_OK, data);
+        finish();
     }
 }

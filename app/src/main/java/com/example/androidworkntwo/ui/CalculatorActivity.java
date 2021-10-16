@@ -1,14 +1,17 @@
 package com.example.androidworkntwo.ui;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -33,14 +36,24 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
     private static final String ARGTWO = "ARG_TWO";
     private static final String OPER = "OPERATION";
 
+    private final String ACCESS_MESSAGE = "ACCESS_MESSAGE";
+    private static final String APP_PREFERENCE = "mysettings";
+    private static final String THEME_ID = "THEME_ID";
+    private int accessMessage = 0;
+
+    private SharedPreferences sharedPreferences;
+
     Button themeSelection;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);
+        System.out.println("ON CREATE");
+        System.out.println("VALUE ON CREATE " + getSharedValue());
 
+        setContentView(R.layout.activity_main);
 
         themeSelection = findViewById(R.id.key_theme_selection);
 
@@ -48,7 +61,7 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CalculatorActivity.this, ThemeSelectionActivity.class);
-                startActivity(intent);
+                mStartForResult.launch(intent);
             }
         });
 
@@ -188,26 +201,58 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         }
     }
 
-    private void changeTheme() {
-        Intent intent = getIntent();
-        int themeId = intent.getIntExtra("THEME", -1);
-        switch (themeId) {
+    private void changeTheme(int value) {
+        System.out.println("VALUE ON CHANGE THEME " + value);
+        switch (value) {
             case 1:
                 setTheme(R.style.MyDarkLightTheme);
-                themeId = 0;
-                intent = null;
                 recreate();
                 break;
 
             case 2:
                 setTheme(R.style.MyBlackTheme);
-                themeId = 0;
-                intent = null;
                 recreate();
                 break;
 
             default:
                 break;
         }
+    }
+
+    ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+
+                @Override
+                public void onActivityResult(ActivityResult result) {
+
+                    sharedPreferences = getPreferences(MODE_PRIVATE);
+
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent data = result.getData();
+                        if (data != null) {
+                            accessMessage = data.getIntExtra(ACCESS_MESSAGE, 0);
+                            if (accessMessage != 0) {
+                                SharedPreferences.Editor edit = sharedPreferences.edit();
+                                edit.putInt(THEME_ID, accessMessage);
+                                edit.apply();
+                                System.out.println("ЗНАЧЕНИЕ SETUP: " + sharedPreferences.getInt(THEME_ID, 0));
+                                changeTheme(sharedPreferences.getInt(THEME_ID, 0));
+                            } else {
+                                Log.println(Log.INFO, "RETURNED_VALUE", "Returned value = 0");
+                            }
+                        }
+                    } else {
+                        System.out.println("Access denied!");
+                    }
+                    recreate();
+                }
+            });
+
+    private int getSharedValue() {
+        if (sharedPreferences != null) {
+            return sharedPreferences.getInt(THEME_ID, 0);
+        }
+        return 0;
     }
 }
