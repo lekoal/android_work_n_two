@@ -4,29 +4,17 @@
     style="@style/LinearOuterThemeSelectionStyle"
     tools:context=".ui.ThemeSelectionActivity">
 
-    <LinearLayout
-        android:id="@+id/pack_1"
-        style="@style/LinearInnerThemeSelectionLandscapeStyle">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_dark_light_theme"
+        style="@style/ImageViewThemeSelectionLandscape"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_theme1" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/image_dark_light_theme"
-            style="@style/ImageViewThemeSelection"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_theme1" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/pack_2"
-        style="@style/LinearInnerThemeSelectionLandscapeStyle">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/image_black_theme"
-            style="@style/ImageViewThemeSelection"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_theme2" />
-
-    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_black_theme"
+        style="@style/ImageViewThemeSelectionLandscape"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_theme2" />
 
 </LinearLayout>
 

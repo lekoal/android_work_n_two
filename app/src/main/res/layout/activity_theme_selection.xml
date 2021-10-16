@@ -2,30 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/LinearOuterThemeSelectionStyle"
+    android:orientation="horizontal"
     tools:context=".ui.ThemeSelectionActivity">
 
-    <LinearLayout
-        android:id="@+id/pack_1"
-        style="@style/LinearInnerThemeSelectionPortraitStyle">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/image_dark_light_theme"
             style="@style/ImageViewThemeSelection"
-            android:layout_gravity="center"
+            android:layout_gravity="center_horizontal"
             android:src="@drawable/ic_theme1" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/pack_2"
-        style="@style/LinearInnerThemeSelectionPortraitStyle">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/image_black_theme"
             style="@style/ImageViewThemeSelection"
-            android:layout_gravity="center"
+            android:layout_gravity="center_horizontal"
             android:src="@drawable/ic_theme2" />
 
-    </LinearLayout>
 
 </LinearLayout>
