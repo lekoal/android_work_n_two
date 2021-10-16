@@ -5,7 +5,7 @@
     <dimen name="textSize">60sp</dimen>
     <dimen name="textLandscapeSize">60sp</dimen>
     <dimen name="width">0dp</dimen>
-    <dimen name="allPadding">5dp</dimen>
+    <dimen name="allPadding">10dp</dimen>
     <dimen name="displayHeight">100dp</dimen>
     <dimen name="displayLandscapeHeight">100dp</dimen>
     <dimen name="lineHeight">1dp</dimen>

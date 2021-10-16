@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -41,8 +42,6 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
     private static final String THEME_ID = "THEME_ID";
     private int accessMessage = 0;
 
-    private SharedPreferences sharedPreferences;
-
     Button themeSelection;
 
     @Override
@@ -50,8 +49,7 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
 
         super.onCreate(savedInstanceState);
 
-        System.out.println("ON CREATE");
-        System.out.println("VALUE ON CREATE " + getSharedValue());
+        changeTheme(getSharedValue());
 
         setContentView(R.layout.activity_main);
 
@@ -202,16 +200,13 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
     }
 
     private void changeTheme(int value) {
-        System.out.println("VALUE ON CHANGE THEME " + value);
         switch (value) {
             case 1:
                 setTheme(R.style.MyDarkLightTheme);
-                recreate();
                 break;
 
             case 2:
                 setTheme(R.style.MyBlackTheme);
-                recreate();
                 break;
 
             default:
@@ -226,18 +221,15 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
                 @Override
                 public void onActivityResult(ActivityResult result) {
 
-                    sharedPreferences = getPreferences(MODE_PRIVATE);
-
                     if (result.getResultCode() == Activity.RESULT_OK) {
                         Intent data = result.getData();
                         if (data != null) {
                             accessMessage = data.getIntExtra(ACCESS_MESSAGE, 0);
                             if (accessMessage != 0) {
+                                SharedPreferences sharedPreferences = CalculatorActivity.this.getPreferences(Context.MODE_PRIVATE);
                                 SharedPreferences.Editor edit = sharedPreferences.edit();
                                 edit.putInt(THEME_ID, accessMessage);
                                 edit.apply();
-                                System.out.println("ЗНАЧЕНИЕ SETUP: " + sharedPreferences.getInt(THEME_ID, 0));
-                                changeTheme(sharedPreferences.getInt(THEME_ID, 0));
                             } else {
                                 Log.println(Log.INFO, "RETURNED_VALUE", "Returned value = 0");
                             }
@@ -250,9 +242,7 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
             });
 
     private int getSharedValue() {
-        if (sharedPreferences != null) {
-            return sharedPreferences.getInt(THEME_ID, 0);
-        }
-        return 0;
+        SharedPreferences sharedPreferences = CalculatorActivity.this.getPreferences(Context.MODE_PRIVATE);
+        return sharedPreferences.getInt(THEME_ID, 0);
     }
 }

@@ -18,7 +18,6 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
         <item name="colorOnPrimary">@color/colorOnPrimary</item>
-        <item name="android:padding">@dimen/allPadding</item>
     </style>
 
     <style name="MyBlackTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -26,6 +25,5 @@
         <item name="colorPrimaryVariant">@color/colorBlackThemePrimaryVariant</item>
         <item name="colorOnPrimary">@color/colorBlackThemeOnPrimary</item>
         <item name="android:background">@color/colorBlackThemeBackground</item>
-        <item name="android:padding">@dimen/allPadding</item>
     </style>
 </resources>
